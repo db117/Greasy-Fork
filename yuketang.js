@@ -37,10 +37,16 @@
             window.location.href = herf;
 
         } else {
-            let videoSrc = document.querySelector('video').src;
-            if (videoSrc == null) {
-                console.log("当前页没有视频")
+            let video = document.querySelector('video');
+            if (video == null) {
+                console.log("当前页没有视频,进行下一个")
                 window.location.href = herf;
+            }
+
+            let playBtn = document.getElementsByClassName('pause_show');
+            if (playBtn.length > 0) {
+                console.log("没有结束，还在暂停，点击开始")
+                document.getElementsByClassName('xt_video_bit_play_btn')[0].click();
             }
 
             console.log("继续监测视频是否结束");
